@@ -49,4 +49,11 @@ public class CustomerService implements BusinessLogicService {
         customer.setPhone(customerRequest.getPhone());
             return customerRepository.save(customer);
         }
+
+    @Override
+    public Customer softDelete(long id, CustomerRequest customerRequest) {
+        Customer customer = customerRepository.getOne(id);
+        customer.setDeleted(customerRequest.getDeleted());
+        return customerRepository.save(customer);
+    }
 }

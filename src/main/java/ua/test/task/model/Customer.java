@@ -24,15 +24,19 @@ public class Customer {
     @Column(name = "phone")
     private String phone;
 
+    @Column(name = "is_deleted", nullable = true)
+    private Boolean isDeleted = false;
+
+
     public Customer() {
     }
 
-    public Customer(Long id, String fullName, String email, String phone) {
+    public Customer(Long id, String fullName, String email, String phone, Boolean isDeleted) {
         this.id = id;
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
-
+        this.isDeleted = isDeleted;
     }
 
     public Long getId() {
@@ -67,4 +71,11 @@ public class Customer {
         this.phone = phone;
     }
 
+    public Boolean getDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        isDeleted = deleted;
+    }
 }

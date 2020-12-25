@@ -6,14 +6,18 @@ public class CustomerRequest {
     private String email;
     private String phone;
 
-    public CustomerRequest(Long id, String fullName, String email, String phone) {
+    private Boolean isDeleted = true;
+
+
+    public CustomerRequest() {
+    }
+
+    public CustomerRequest(Long id, String fullName, String email, String phone, Boolean isDeleted) {
         this.id = id;
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
-    }
-
-    public CustomerRequest() {
+        this.isDeleted = isDeleted;
     }
 
     public Long getId() {
@@ -46,5 +50,13 @@ public class CustomerRequest {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Boolean getDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        isDeleted = deleted;
     }
 }

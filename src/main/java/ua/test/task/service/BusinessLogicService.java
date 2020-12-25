@@ -16,5 +16,7 @@ public interface BusinessLogicService {
 
     Customer updateCustomer(long id, CustomerRequest customerRequest);
 
+    Customer softDelete(long id, CustomerRequest customerRequest);
+
 
 }

@@ -34,7 +34,7 @@ public class CustomerController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public CustomerRequest customerRead(@PathVariable(value = "id") long id) {
         Customer customer = customerService.findById(id);
-        return new CustomerRequest(customer.getId(), customer.getFullName(), customer.getEmail(), customer.getPhone());
+        return new CustomerRequest(customer.getId(), customer.getFullName(), customer.getEmail(), customer.getPhone(), customer.getDeleted());
     }
 
 
@@ -44,9 +44,9 @@ public class CustomerController {
     }
 
 
-    @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
-    public void customerDelete(@PathVariable(value = "id") long id) {
-        customerService.deleteById(id);
+    @RequestMapping(value = "{id}", method = RequestMethod.PATCH)
+    public Customer customerSoftDelete(@PathVariable(value = "id") long id, CustomerRequest customerRequest) {
+       return customerService.softDelete(id, customerRequest );
     }
 
 }
