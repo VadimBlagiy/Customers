@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 import ua.test.task.dto.CustomerRequest;
 import ua.test.task.model.Customer;
 import ua.test.task.service.CustomerService;
-
 import java.util.List;
 
 @RestController()
@@ -48,5 +47,4 @@ public class CustomerController {
     public Customer customerSoftDelete(@PathVariable(value = "id") long id, CustomerRequest customerRequest) {
        return customerService.softDelete(id, customerRequest );
     }
-
 }

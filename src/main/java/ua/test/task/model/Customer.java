@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "customers_table")
@@ -27,6 +28,8 @@ public class Customer {
     @Column(name = "is_deleted", nullable = true)
     private Boolean isDeleted = false;
 
+    @Column(name = "created")
+    public  LocalDateTime creatCustomer =  LocalDateTime.now();
 
     public Customer() {
     }
@@ -37,6 +40,7 @@ public class Customer {
         this.email = email;
         this.phone = phone;
         this.isDeleted = isDeleted;
+
     }
 
     public Long getId() {

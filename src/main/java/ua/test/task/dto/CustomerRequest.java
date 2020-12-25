@@ -1,13 +1,12 @@
 package ua.test.task.dto;
 
+
 public class CustomerRequest {
     private Long id;
     private String fullName;
     private String email;
     private String phone;
-
     private Boolean isDeleted = true;
-
 
     public CustomerRequest() {
     }

@@ -10,8 +10,6 @@ public interface BusinessLogicService {
 
     Customer findById(long Id);
 
-    void deleteById(long id);
-
     Customer createCustomer(CustomerRequest customerRequest);
 
     Customer updateCustomer(long id, CustomerRequest customerRequest);

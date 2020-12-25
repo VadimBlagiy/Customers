@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import ua.test.task.dto.CustomerRequest;
 import ua.test.task.model.Customer;
 import ua.test.task.repository.CustomerRepository;
-
 import java.util.List;
 
 @Service
@@ -29,11 +28,6 @@ public class CustomerService implements BusinessLogicService {
     }
 
     @Override
-    public void deleteById(long id) {
-        customerRepository.deleteById(id);
-    }
-
-    @Override
     public Customer createCustomer(CustomerRequest customerRequest) {
         Customer customer = new Customer();
         customer.setFullName(customerRequest.getFullName());
@@ -47,7 +41,7 @@ public class CustomerService implements BusinessLogicService {
         Customer customer = customerRepository.getOne(id);
         customer.setFullName(customerRequest.getFullName());
         customer.setPhone(customerRequest.getPhone());
-            return customerRepository.save(customer);
+        return customerRepository.save(customer);
         }
 
     @Override

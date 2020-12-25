@@ -9,7 +9,6 @@ password=123
 
 server.port = 8080
 
-JSON format
 
 Autor: _Vadim Blagiy_
 tel: _096 128 03 61_
